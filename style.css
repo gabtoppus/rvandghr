@@ -1,0 +1,151 @@
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffe4ec;
+  background-image: url(https://i.postimg.cc/rpDFKyPB/baixados.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.heart {
+  font-size: 140px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s ease;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.letter {
+  display: none;
+  margin-top: 30px;
+  background: #fff8f5;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease forwards;
+  border: 2px solid #000000;
+
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 0px,
+    transparent 20px
+  );
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page.active {
+  display: block;
+}
+
+.next-btn,
+.prev-btn {
+  margin-top: 20px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+  background: #a72753;
+}
+
+.assinatura {
+  font-family: "Allura", cursive;
+  font-size: 15px;
+  margin-top: 35px;
+  text-align: right;
+  text-decoration: underline;
+  color: #000000;
+}
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.heart-float {
+  position: absolute;
+  font-size: 20px;
+  color: #000000;
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
